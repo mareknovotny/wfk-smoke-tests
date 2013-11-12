@@ -1,5 +1,5 @@
 # This build prepares environment for CI job wfk-prod-smoke-tests-quickstarts
-export WFK_VERSION=2.4.0.ER2
+export WFK_VERSION=2.4.0
 export EAP_VERSION=6.1.1
 
 if [[ -z $JENKINS_URL ]]; then
