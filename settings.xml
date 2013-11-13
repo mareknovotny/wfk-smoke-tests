@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+<!--
+     This settings.xml is template for generic WFK setup
+You need to set system environment properties to:
+   1. WFK maven repository directory
+
+-DwfkMavenRepoUrl=file://$WORKSPACE/jboss-wfk-maven-repository 
+
+   2. EAP maven repository directory
+
+-DeapMavenRepoUrl=file://$WORKSPACE/jboss-eap-maven-repository 
+
+   3. local repository for maven
+
+-Dmaven.repo.local=$WORKSPACE/.repository 
+
+   4. use this settings as 
+
+-s $WORKSPACE/settings.xml
+-->
+  <localRepository>${repository}</localRepository>
+  <mirrors>
+    
+  </mirrors>
+  
+  <profiles>
+
+    <profile>
+      <id>jboss-eap-repository</id>
+      <repositories>
+        <repository>
+          <id>jboss-eap-repository</id>
+          <name>JBoss EAP6 Maven Repository</name>
+          <url>${eapMavenRepoUrl}</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+    <profile>
+      <id>jboss-wfk-repository</id>
+       <repositories>
+         <repository>
+           <id>jboss-wfk-repository</id>
+           <name>JBoss WFK Maven Repository</name>
+           <url>${wfkMavenRepoUrl}</url>
+           <layout>default</layout>
+           <releases>
+             <enabled>true</enabled>
+             <updatePolicy>never</updatePolicy>
+           </releases>
+           <snapshots>
+             <enabled>false</enabled>
+             <updatePolicy>never</updatePolicy>
+           </snapshots>
+         </repository>
+       </repositories>
+       <pluginRepositories>
+         <pluginRepository>
+           <id>jboss-wfk-repository</id>
+           <name>JBoss WFK Maven Repository</name>
+           <url>${wfkMavenRepoUrl}</url>
+           <layout>default</layout>
+           <releases>
+             <enabled>true</enabled>
+             <updatePolicy>never</updatePolicy>
+           </releases>
+           <snapshots>
+             <enabled>false</enabled>
+             <updatePolicy>never</updatePolicy>
+           </snapshots>
+         </pluginRepository>
+       </pluginRepositories>
+     </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>jboss-eap-repository</activeProfile>
+    <activeProfile>jboss-wfk-repository</activeProfile>
+  </activeProfiles>
+
+</settings>
