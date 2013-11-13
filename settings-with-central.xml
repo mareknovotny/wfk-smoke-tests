@@ -1,0 +1,50 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <pluginGroups>
+    <pluginGroup>org.jboss.as.plugins</pluginGroup>
+  </pluginGroups>
+
+  <profiles>
+    <profile>
+      <id>jboss-wfk2-repository</id>
+      <repositories>
+        <repository>
+          <id>jboss-wfk2-repository</id>
+          <name>JBoss WFK2 internal Maven Repository</name>
+          <url>http://download.devel.redhat.com/brewroot/repos/jb-wfk-2-rhel-6-build/latest/maven</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+         <pluginRepository>
+          <id>jboss-wfk2-repository</id>
+          <name>JBoss WFK2 internal Maven Repository</name>
+          <url>http://download.devel.redhat.com/brewroot/repos/jb-wfk-2-rhel-6-build/latest/maven</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+         </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+   <activeProfile>jboss-wfk2-repository</activeProfile>
+  </activeProfiles>
+
+</settings>
