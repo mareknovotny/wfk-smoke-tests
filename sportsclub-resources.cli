@@ -1,0 +1,3 @@
+/subsystem=security/security-domain=employees:add(cache-type=default)
+
+/subsystem=security/security-domain=employees/authentication=classic:add(login-modules=[{"code"=>"Database","flag"=>"required", "module-options"=>[("dsJndiName"=>"java:jboss/datasources/ExampleDS"),("principalsQuery"=>"SELECT passwd FROM SPORTSCLUB_USERS WHERE username=?"),("rolesQuery"=>"select userRoles,'Roles' from SPORTSCLUB_ROLES where username=?")]}])
