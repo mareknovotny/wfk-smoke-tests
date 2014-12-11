@@ -1,0 +1,1 @@
+jms-queue add --queue-address=sportsclub --entries=queues/sportsclub
