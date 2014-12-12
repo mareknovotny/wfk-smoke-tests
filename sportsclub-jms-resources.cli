@@ -1,1 +1,5 @@
-jms-queue add --queue-address=sportsclub --entries=queues/sportsclub
+if (outcome != success) of /subsystem=messaging/hornetq-server=default:read-resource
+	if (outcome != success) of /subsystem=messaging/hornetq-server=default/jms-queue=sportsclub:read-resource
+		jms-queue add --queue-address=sportsclub --entries=queues/sportsclub
+	end-if
+end-if
